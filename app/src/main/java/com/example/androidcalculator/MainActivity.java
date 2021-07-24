@@ -2,6 +2,7 @@ package com.example.androidcalculator;
 
 //package com.example.user.careerandroid;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
+    Button btnBasic, btnScience;
     TextView txtDisplay, txtDisplay1;
     Button btnSeven, btnEight, btnNine, btnDel, btnAC, btnFour, btnFive,
             btnSix, btnMultiply, btnDivision, btnOne, btnTwo, btnThree, btnPlus, btnMinus,
@@ -33,6 +35,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        btnBasic = findViewById(R.id.btn_basic);
+        btnScience = findViewById(R.id.btn_sci);
         txtDisplay1 = findViewById(R.id.txt_display1);
         txtDisplay = findViewById(R.id.txt_display);
         btnDel = findViewById(R.id.btn_del);
@@ -56,6 +60,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnPlusorMin = findViewById(R.id.btn_plusormin);
         btnEqual = findViewById(R.id.btn_equal);
 
+        btnBasic.setOnClickListener(this);
+
         btnOne.setOnClickListener(this);
         btnTwo.setOnClickListener(this);
         btnThree.setOnClickListener(this);
@@ -77,15 +83,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnDel.setOnClickListener(this);
         btnEqual.setOnClickListener(this);
 
-       /* btnOne.setOnClickListener(new View.OnClickListener() {
+        btnScience.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String text = txtDisplay.getText().toString();
-                txtDisplay.setText(text+1);
+                Intent i = new Intent(MainActivity.this, Science.class);
+                startActivity(i);
             }
         });
 
-        btnTwo.setOnClickListener(new View.OnClickListener() {
+        /*btnTwo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
