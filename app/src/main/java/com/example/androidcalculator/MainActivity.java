@@ -1,7 +1,5 @@
 package com.example.androidcalculator;
 
-//package com.example.user.careerandroid;
-
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -39,8 +37,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnScience = findViewById(R.id.btn_sci);
         txtDisplay1 = findViewById(R.id.txt_display1);
         txtDisplay = findViewById(R.id.txt_display);
-        btnDel = findViewById(R.id.btn_del);
-        btnAC = findViewById(R.id.btn_ac);
         btnOne = findViewById(R.id.btn_one);
         btnTwo = findViewById(R.id.btn_two);
         btnThree = findViewById(R.id.btn_three);
@@ -58,6 +54,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnMultiply = findViewById(R.id.btn_multiply);
         btnDivision = findViewById(R.id.btn_division);
         btnPlusorMin = findViewById(R.id.btn_plusormin);
+        btnDel = findViewById(R.id.btn_del);
+        btnAC = findViewById(R.id.btn_ac);
         btnEqual = findViewById(R.id.btn_equal);
 
         btnBasic.setOnClickListener(this);
