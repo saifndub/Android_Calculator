@@ -7,32 +7,59 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:id="@+id/txt_display1"
-        android:textSize="50sp"
-        android:gravity="center_vertical|right"
-        android:layout_height="100dp" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:id="@+id/txt_display"
-        android:textSize="50sp"
-        android:gravity="center_vertical|right"
-        android:layout_height="100dp" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#000000"
         android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_basic"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textSize="15sp"
+                android:text="BASIC" />
+
+            <Button
+                android:id="@+id/btn_sci"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textSize="15sp"
+                android:text="SCIENTIFIC" />
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:id="@+id/txt_display1"
+            android:textSize="50sp"
+            android:gravity="center_vertical|right"
+            android:layout_height="60dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:id="@+id/txt_display"
+            android:textSize="50sp"
+            android:gravity="center_vertical|right"
+            android:layout_height="60dp" />
+<!--    </LinearLayout>-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:background="#000000"-->
+<!--        android:orientation="vertical">-->
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:orientation="horizontal">
-
 
             <Button
                 android:id="@+id/btn_seven"
@@ -168,7 +195,6 @@
                 android:textSize="40sp"
                 android:text="-" />
 
-
         </LinearLayout>
 
         <LinearLayout
@@ -220,6 +246,5 @@
         </LinearLayout>
 
     </LinearLayout>
-
 
 </LinearLayout>
