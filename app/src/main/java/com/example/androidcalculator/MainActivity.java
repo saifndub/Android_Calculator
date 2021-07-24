@@ -10,13 +10,13 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
-    TextView txtDisplay;
+    TextView txtDisplay, txtDisplay1;
     Button btnSeven, btnEight, btnNine, btnDel, btnAC, btnFour, btnFive,
             btnSix, btnMultiply, btnDivision, btnOne, btnTwo, btnThree, btnPlus, btnMinus,
             btnZero, btnDbZero, btnDot, btnPlusorMin, btnEqual;
 
     double fnum, snum, result;
-
+    String text;
     String answer;
     String opt="";
 
@@ -33,7 +33,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        txtDisplay1 = findViewById(R.id.txt_display1);
         txtDisplay = findViewById(R.id.txt_display);
+        btnDel = findViewById(R.id.btn_del);
+        btnAC = findViewById(R.id.btn_ac);
         btnOne = findViewById(R.id.btn_one);
         btnTwo = findViewById(R.id.btn_two);
         btnThree = findViewById(R.id.btn_three);
@@ -50,8 +53,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnMinus = findViewById(R.id.btn_minus);
         btnMultiply = findViewById(R.id.btn_multiply);
         btnDivision = findViewById(R.id.btn_division);
-        btnDel = findViewById(R.id.btn_del);
-        btnAC = findViewById(R.id.btn_ac);
         btnPlusorMin = findViewById(R.id.btn_plusormin);
         btnEqual = findViewById(R.id.btn_equal);
 
@@ -107,8 +108,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             fnum = Double.parseDouble(txtDisplay.getText().toString());
         else {
             //String answer;
-
             snum = Double.parseDouble(txtDisplay.getText().toString());
+
             if (opt == "+") {
                 result = fnum + snum;
                 answer = String.format("%.0f", result);
@@ -122,7 +123,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 fnum=result;
                 txtDisplay.setText(answer);
             }
-
             else if(opt == "*")
             {
                 result = fnum * snum;
@@ -130,7 +130,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 fnum=result;
                 txtDisplay.setText(answer);
             }
-
             else if(opt == "/")
             {
                 result = fnum / snum;
@@ -143,8 +142,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
     public void equal(){
         //String answer;
-
         snum = Double.parseDouble(txtDisplay.getText().toString());
+        text = txtDisplay1.getText().toString();
+        txtDisplay1.setText(text+txtDisplay.getText().toString());
+
         if (opt == "+") {
             result = fnum + snum;
             answer = String.format("%.0f", result);
@@ -156,14 +157,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             answer = String.format("%.0f", result);
             txtDisplay.setText(answer);
         }
-
         else if(opt == "*")
         {
             result = fnum * snum;
             answer = String.format("%.0f", result);
             txtDisplay.setText(answer);
         }
-
         else if(opt == "/")
         {
             result = fnum / snum;
@@ -176,7 +175,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        String text;
+        //String text;
         switch (v.getId()){
 
             case R.id.btn_one:
@@ -243,21 +242,33 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //               fnum = (double) Double.parseDouble(txtDisplay);
                 calculate();
                 opt = "+";
+                text = txtDisplay.getText().toString();
+                txtDisplay1.setText(text+opt);
+                flag();
                 break;
 
             case R.id.btn_minus:
                 calculate();
                 opt = "-";
+                text = txtDisplay.getText().toString();
+                txtDisplay1.setText(text+opt);
+                flag();
                 break;
 
             case R.id.btn_multiply:
                 calculate();
                 opt = "*";
+                text = txtDisplay.getText().toString();
+                txtDisplay1.setText(text+opt);
+                flag();
                 break;
 
             case R.id.btn_division:
                 calculate();
                 opt = "/";
+                text = txtDisplay.getText().toString();
+                txtDisplay1.setText(text+opt);
+                flag();
                 break;
 
             case R.id.btn_del:
@@ -279,6 +290,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 snum = 0;
                 result = 0;
                 txtDisplay.setText("");
+                txtDisplay1.setText("");
                 break;
 
             case R.id.btn_plusormin:
