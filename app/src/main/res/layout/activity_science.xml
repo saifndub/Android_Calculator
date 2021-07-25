@@ -409,7 +409,7 @@
                 android:text="." />
 
             <Button
-                android:id="@+id/btn_pi"
+                android:id="@+id/btn_db_zero"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.5"
