@@ -14,7 +14,7 @@ public class Science extends AppCompatActivity implements View.OnClickListener{
     TextView txtDisplay, txtDisplay1;
     Button btnSeven, btnEight, btnNine, btnDel, btnAC, btnFour, btnFive,
             btnSix, btnMultiply, btnDivision, btnOne, btnTwo, btnThree, btnPlus, btnMinus,
-            btnZero, btnDbZero, btnDot, btnPlusorMin, btnEqual;
+            btnZero, btnPi, btnDot, btnPlusorMin, btnEqual;
 
     double fnum, snum, result;
     String text;
@@ -48,7 +48,7 @@ public class Science extends AppCompatActivity implements View.OnClickListener{
         btnEight = findViewById(R.id.btn_eight);
         btnNine = findViewById(R.id.btn_nine);
         btnZero = findViewById(R.id.btn_zero);
-        btnDbZero = findViewById(R.id.btn_db_zero);
+        btnPi = findViewById(R.id.btn_pi);
         btnDot = findViewById(R.id.btn_dot);
         btnPlus = findViewById(R.id.btn_plus);
         btnMinus = findViewById(R.id.btn_minus);
@@ -71,7 +71,7 @@ public class Science extends AppCompatActivity implements View.OnClickListener{
         btnEight.setOnClickListener(this);
         btnNine.setOnClickListener(this);
         btnZero.setOnClickListener(this);
-        btnDbZero.setOnClickListener(this);
+        btnPi.setOnClickListener(this);
         btnDot.setOnClickListener(this);
         btnPlus.setOnClickListener(this);
         btnMinus.setOnClickListener(this);
@@ -233,7 +233,7 @@ public class Science extends AppCompatActivity implements View.OnClickListener{
                 text = txtDisplay.getText().toString();
                 txtDisplay.setText(text+0);
                 break;
-            case R.id.btn_db_zero:
+            case R.id.btn_pi:
                 flag();
                 text = txtDisplay.getText().toString();
                 txtDisplay.setText(text+0+0);
