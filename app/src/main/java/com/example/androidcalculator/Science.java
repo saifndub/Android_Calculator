@@ -23,7 +23,6 @@ public class Science extends AppCompatActivity implements View.OnClickListener{
 
     public int eq;
     public int flag;
-
     public Science() {
         flag = 0;
         eq = 0;
@@ -60,7 +59,6 @@ public class Science extends AppCompatActivity implements View.OnClickListener{
         btnEqual = findViewById(R.id.btn_equal);
 
         //btnBasic.setOnClickListener(this);
-
         btnOne.setOnClickListener(this);
         btnTwo.setOnClickListener(this);
         btnThree.setOnClickListener(this);
@@ -112,9 +110,7 @@ public class Science extends AppCompatActivity implements View.OnClickListener{
         if(opt=="")
             fnum = Double.parseDouble(txtDisplay.getText().toString());
         else {
-            //String answer;
             snum = Double.parseDouble(txtDisplay.getText().toString());
-
             if (opt == "+") {
                 result = fnum + snum;
                 answer = String.format("%.0f", result);
@@ -150,7 +146,6 @@ public class Science extends AppCompatActivity implements View.OnClickListener{
         snum = Double.parseDouble(txtDisplay.getText().toString());
         text = txtDisplay1.getText().toString();
         txtDisplay1.setText(text+txtDisplay.getText().toString());
-
         if (opt == "+") {
             result = fnum + snum;
             answer = String.format("%.0f", result);
@@ -180,9 +175,7 @@ public class Science extends AppCompatActivity implements View.OnClickListener{
 
     @Override
     public void onClick(View v) {
-        //String text;
         switch (v.getId()){
-
             case R.id.btn_one:
                 flag();
                 text = txtDisplay.getText().toString();
@@ -244,14 +237,12 @@ public class Science extends AppCompatActivity implements View.OnClickListener{
                 txtDisplay.setText(text+".");
                 break;
             case R.id.btn_plus:
-//               fnum = (double) Double.parseDouble(txtDisplay);
                 calculate();
                 opt = "+";
                 text = txtDisplay.getText().toString();
                 txtDisplay1.setText(text+opt);
                 flag();
                 break;
-
             case R.id.btn_minus:
                 calculate();
                 opt = "-";
@@ -259,7 +250,6 @@ public class Science extends AppCompatActivity implements View.OnClickListener{
                 txtDisplay1.setText(text+opt);
                 flag();
                 break;
-
             case R.id.btn_multiply:
                 calculate();
                 opt = "*";
@@ -267,7 +257,6 @@ public class Science extends AppCompatActivity implements View.OnClickListener{
                 txtDisplay1.setText(text+opt);
                 flag();
                 break;
-
             case R.id.btn_division:
                 calculate();
                 opt = "/";
@@ -275,12 +264,9 @@ public class Science extends AppCompatActivity implements View.OnClickListener{
                 txtDisplay1.setText(text+opt);
                 flag();
                 break;
-
             case R.id.btn_del:
                 int length = txtDisplay.getText().length();
                 int number = txtDisplay.getText().length() - 1 ;
-                //String store;
-
                 if (length > 0)
                 {
                     StringBuilder back = new StringBuilder(txtDisplay.getText());
@@ -297,17 +283,14 @@ public class Science extends AppCompatActivity implements View.OnClickListener{
                 txtDisplay.setText("");
                 txtDisplay1.setText("");
                 break;
-
             case R.id.btn_plusormin:
                 double ops = Double.parseDouble(String.valueOf(txtDisplay.getText()));
                 ops = ops * (-1);
                 txtDisplay.setText(String.valueOf(ops));
                 break;
-
             case R.id.btn_equal:
                 equal();
                 break;
         }
-
     }
 }
