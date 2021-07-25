@@ -105,165 +105,155 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             eq=0;
         }
     }
+    public void sum(){
+        result = fnum + snum;
+        answer = String.format("%.0f", result);
+        txtDisplay.setText(answer);
+    }
+    public void sub(){
+        result = fnum - snum;
+        answer = String.format("%.0f", result);
+        txtDisplay.setText(answer);
+    }
+    public void mul(){
+        result = fnum * snum;
+        answer = String.format("%.0f", result);
+        txtDisplay.setText(answer);
+    }
+    public void div(){
+        result = fnum / snum;
+        answer = String.format("%.0f", result);
+        txtDisplay.setText(answer);
+    }
+
     public void calculate(){
         if(opt=="")
             fnum = Double.parseDouble(txtDisplay.getText().toString());
         else {
             snum = Double.parseDouble(txtDisplay.getText().toString());
             if (opt == "+") {
-                result = fnum + snum;
-                answer = String.format("%.0f", result);
+                sum();
                 fnum = result;
-                txtDisplay.setText(answer);
             }
             else if(opt == "-")
             {
-                result = fnum - snum;
-                answer = String.format("%.0f", result);
-                fnum=result;
-                txtDisplay.setText(answer);
+                sub();
+                fnum = result;
             }
             else if(opt == "*")
             {
-                result = fnum * snum;
-                answer = String.format("%.0f", result);
-                fnum=result;
-                txtDisplay.setText(answer);
+                mul();
+                fnum = result;
             }
             else if(opt == "/")
             {
-                result = fnum / snum;
-                answer = String.format("%.0f", result);
-                fnum=result;
-                txtDisplay.setText(answer);
+                div();
+                fnum = result;
             }
         }
         flag=1;
     }
     public void equal(){
-        //String answer;
         snum = Double.parseDouble(txtDisplay.getText().toString());
         text = txtDisplay1.getText().toString();
         txtDisplay1.setText(text+txtDisplay.getText().toString());
 
         if (opt == "+") {
-            result = fnum + snum;
-            answer = String.format("%.0f", result);
-            txtDisplay.setText(answer);
+            sum();
         }
         else if(opt == "-")
         {
-            result = fnum - snum;
-            answer = String.format("%.0f", result);
-            txtDisplay.setText(answer);
+            sub();
         }
         else if(opt == "*")
         {
-            result = fnum * snum;
-            answer = String.format("%.0f", result);
-            txtDisplay.setText(answer);
+            mul();
         }
         else if(opt == "/")
         {
-            result = fnum / snum;
-            answer = String.format("%.0f", result);
-            txtDisplay.setText(answer);
+            div();
         }
         opt="";
         eq=1;
     }
 
+    public void get_txt(){
+        flag();
+        text = txtDisplay.getText().toString();
+    }
+    public void calculation(){
+        calculate();
+        text = txtDisplay.getText().toString();
+        txtDisplay1.setText(text+opt);
+        flag();
+    }
     @Override
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btn_one:
-                flag();
-                text = txtDisplay.getText().toString();
+                get_txt();
                 txtDisplay.setText(text+1);
                 break;
             case R.id.btn_two:
-                flag();
-                text = txtDisplay.getText().toString();
+                get_txt();
                 txtDisplay.setText(text+2);
                 break;
             case R.id.btn_three:
-                flag();
-                text = txtDisplay.getText().toString();
+                get_txt();
                 txtDisplay.setText(text+3);
                 break;
             case R.id.btn_four:
-                flag();
-                text = txtDisplay.getText().toString();
+                get_txt();
                 txtDisplay.setText(text+4);
                 break;
             case R.id.btn_five:
-                flag();
-                text = txtDisplay.getText().toString();
+                get_txt();
                 txtDisplay.setText(text+5);
                 break;
             case R.id.btn_six:
-                flag();
-                text = txtDisplay.getText().toString();
+                get_txt();
                 txtDisplay.setText(text+6);
                 break;
             case R.id.btn_seven:
-                flag();
-                text = txtDisplay.getText().toString();
+                get_txt();
                 txtDisplay.setText(text+7);
                 break;
             case R.id.btn_eight:
-                flag();
-                text = txtDisplay.getText().toString();
+                get_txt();
                 txtDisplay.setText(text+8);
                 break;
             case R.id.btn_nine:
-                flag();
-                text = txtDisplay.getText().toString();
+                get_txt();
                 txtDisplay.setText(text+9);
                 break;
             case R.id.btn_zero:
-                flag();
-                text = txtDisplay.getText().toString();
+                get_txt();
                 txtDisplay.setText(text+0);
                 break;
             case R.id.btn_db_zero:
-                flag();
-                text = txtDisplay.getText().toString();
+                get_txt();
                 txtDisplay.setText(text+0+0);
                 break;
             case R.id.btn_dot:
-                flag();
-                text = txtDisplay.getText().toString();
+                get_txt();
                 txtDisplay.setText(text+".");
                 break;
             case R.id.btn_plus:
 //               fnum = (double) Double.parseDouble(txtDisplay);
-                calculate();
+                calculation();
                 opt = "+";
-                text = txtDisplay.getText().toString();
-                txtDisplay1.setText(text+opt);
-                flag();
                 break;
             case R.id.btn_minus:
-                calculate();
+                calculation();
                 opt = "-";
-                text = txtDisplay.getText().toString();
-                txtDisplay1.setText(text+opt);
-                flag();
                 break;
             case R.id.btn_multiply:
-                calculate();
+                calculation();
                 opt = "*";
-                text = txtDisplay.getText().toString();
-                txtDisplay1.setText(text+opt);
-                flag();
                 break;
             case R.id.btn_division:
-                calculate();
+                calculation();
                 opt = "/";
-                text = txtDisplay.getText().toString();
-                txtDisplay1.setText(text+opt);
-                flag();
                 break;
             case R.id.btn_del:
                 int length = txtDisplay.getText().length();
