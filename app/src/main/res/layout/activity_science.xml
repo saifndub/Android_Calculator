@@ -94,7 +94,7 @@
                     android:layout_weight="1"
                     android:text="Radian" />
             </RadioGroup>
-            
+
             <TextView
                 android:id="@+id/txt_memory"
                 android:layout_height="60dp"

@@ -182,7 +182,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         text = txtDisplay.getText().toString();
     }
     public void calculation(){
-        calculate();
         text = txtDisplay.getText().toString();
         txtDisplay1.setText(text+opt);
         flag();
@@ -240,20 +239,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_plus:
 //               fnum = (double) Double.parseDouble(txtDisplay);
-                calculation();
+                calculate();
                 opt = "+";
+                calculation();
                 break;
             case R.id.btn_minus:
-                calculation();
+                calculate();
                 opt = "-";
+                calculation();
                 break;
             case R.id.btn_multiply:
-                calculation();
+                calculate();
                 opt = "*";
+                calculation();
                 break;
             case R.id.btn_division:
-                calculation();
+                calculate();
                 opt = "/";
+                calculation();
                 break;
             case R.id.btn_del:
                 int length = txtDisplay.getText().length();
