@@ -11,10 +11,12 @@ import android.widget.TextView;
 public class Science extends AppCompatActivity implements View.OnClickListener{
 
     Button btnBasic, btnScience;
-    TextView txtDisplay, txtDisplay1;
+    TextView txtDisplay, txtDisplay1, txtMemory;
     Button btnSeven, btnEight, btnNine, btnDel, btnAC, btnFour, btnFive,
             btnSix, btnMultiply, btnDivision, btnOne, btnTwo, btnThree, btnPlus, btnMinus,
             btnZero, btnPi, btnDot, btnPlusorMin, btnEqual;
+    Button btnSin, btnSinh, btnCos, btnCosh, btnTan, btnTanh, btnLog, btnLnx,
+            btnMread, btnMclear, btnMsave, btnBstart, btnBend;
 
     double fnum, snum, result;
     String text;
@@ -35,6 +37,7 @@ public class Science extends AppCompatActivity implements View.OnClickListener{
 
         btnBasic = findViewById(R.id.btn_basic);
         btnScience = findViewById(R.id.btn_sci);
+        txtMemory = findViewById(R.id.txt_memory);
         txtDisplay1 = findViewById(R.id.txt_display1);
         txtDisplay = findViewById(R.id.txt_display);
         btnOne = findViewById(R.id.btn_one);
@@ -58,6 +61,22 @@ public class Science extends AppCompatActivity implements View.OnClickListener{
         btnAC = findViewById(R.id.btn_ac);
         btnEqual = findViewById(R.id.btn_equal);
 
+        btnSin = findViewById(R.id.btn_sin);
+        btnSinh = findViewById(R.id.btn_sinh);
+        btnCos = findViewById(R.id.btn_cos);
+        btnCosh = findViewById(R.id.btn_cosh);
+        btnTan = findViewById(R.id.btn_tan);
+        btnTanh = findViewById(R.id.btn_tanh);
+        btnLog = findViewById(R.id.btn_log);
+        btnLnx = findViewById(R.id.btn_lnx);
+        btnMread = findViewById(R.id.btn_mread);
+        btnMclear = findViewById(R.id.btn_mclear);
+        btnMsave = findViewById(R.id.btn_msave);
+        btnTanh = findViewById(R.id.btn_tanh);
+        btnTanh = findViewById(R.id.btn_tanh);
+        btnBstart = findViewById(R.id.btn_bstart);
+        btnBend = findViewById(R.id.btn_bend);
+
         //btnBasic.setOnClickListener(this);
         btnOne.setOnClickListener(this);
         btnTwo.setOnClickListener(this);
@@ -79,6 +98,20 @@ public class Science extends AppCompatActivity implements View.OnClickListener{
         btnAC.setOnClickListener(this);
         btnDel.setOnClickListener(this);
         btnEqual.setOnClickListener(this);
+
+        btnSin.setOnClickListener(this);
+        btnSinh.setOnClickListener(this);
+        btnCos.setOnClickListener(this);
+        btnCosh.setOnClickListener(this);
+        btnTan.setOnClickListener(this);
+        btnTanh.setOnClickListener(this);
+        btnLog.setOnClickListener(this);
+        btnLnx.setOnClickListener(this);
+        btnMread.setOnClickListener(this);
+        btnMclear.setOnClickListener(this);
+        btnMsave.setOnClickListener(this);
+        btnBstart.setOnClickListener(this);
+        btnBend.setOnClickListener(this);
 
         btnBasic.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -275,7 +308,6 @@ public class Science extends AppCompatActivity implements View.OnClickListener{
                     txtDisplay.setText(answer);
                 }
                 break;
-
             case R.id.btn_ac:
                 fnum = 0;
                 snum = 0;
@@ -290,6 +322,58 @@ public class Science extends AppCompatActivity implements View.OnClickListener{
                 break;
             case R.id.btn_equal:
                 equal();
+                break;
+
+            case R.id.btn_bstart:
+                text = txtDisplay.getText().toString();
+                txtDisplay.setText(text+"(");
+                break;
+            case R.id.btn_bend:
+                text = txtDisplay.getText().toString();
+                txtDisplay.setText(text+")");
+                break;
+            case R.id.btn_sin:
+                text = txtDisplay.getText().toString();
+                txtDisplay.setText(text+"Sin(");
+                break;
+            case R.id.btn_sinh:
+                text = txtDisplay.getText().toString();
+                txtDisplay.setText(text+"Sinh(");
+                break;
+            case R.id.btn_cos:
+                text = txtDisplay.getText().toString();
+                txtDisplay.setText(text+"Cos(");
+                break;
+            case R.id.btn_cosh:
+                text = txtDisplay.getText().toString();
+                txtDisplay.setText(text+"Cosh(");
+                break;
+            case R.id.btn_tan:
+                text = txtDisplay.getText().toString();
+                txtDisplay.setText(text+"Tan(");
+                break;
+            case R.id.btn_tanh:
+                text = txtDisplay.getText().toString();
+                txtDisplay.setText(text+"Tanh(");
+                break;
+            case R.id.btn_log:
+                text = txtDisplay.getText().toString();
+                txtDisplay.setText(text+"log(");
+                break;
+            case R.id.btn_lnx:
+                text = txtDisplay.getText().toString();
+                txtDisplay.setText(text+"ln(");
+                break;
+            case R.id.btn_mread:
+                text = txtMemory.getText().toString();
+                txtDisplay.setText(text);
+                break;
+            case R.id.btn_mclear:
+                txtMemory.setText("");
+                break;
+            case R.id.btn_msave:
+                text = txtDisplay.getText().toString();
+                txtMemory.setText(text);
                 break;
         }
     }

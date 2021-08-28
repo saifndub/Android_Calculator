@@ -62,14 +62,14 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/btn_start"
+                android:id="@+id/btn_bstart"
                 android:layout_width="50dp"
                 android:layout_height="match_parent"
                 android:textAllCaps="false"
                 android:textSize="20sp"
                 android:text="(" />
             <Button
-                android:id="@+id/btn_end"
+                android:id="@+id/btn_bend"
                 android:layout_width="50dp"
                 android:layout_height="match_parent"
                 android:textAllCaps="false"
